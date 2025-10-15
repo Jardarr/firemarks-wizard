@@ -1,6 +1,6 @@
-// BookmarkItemComponent.tsx
 import type { BookmarkItem } from "../types/bookmarkTypes";
 import BookmarkTree from "./bookmarkTree";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface BookmarkItemComponentProps {
     item: BookmarkItem;
@@ -87,21 +87,29 @@ const BookmarkItemComponent: React.FC<BookmarkItemComponentProps> = ({
                     </svg>
                 </span>
             </strong>
-            {item.children &&
-                item.children.length > 0 &&
-                expandedFolders[item.guid] && (
-                    <div className="m-2">
-                        <BookmarkTree
-                            items={item.children}
-                            isRoot={false}
-                            parentId={item.guid}
-                            onUpdate={onUpdate}
-                            darkMode={darkMode}
-                            expandedFolders={expandedFolders}
-                            toggleFolder={toggleFolder}
-                        />
-                    </div>
-                )}
+            <AnimatePresence>
+                {item.children &&
+                    item.children.length > 0 &&
+                    expandedFolders[item.guid] && (
+                        <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.3, ease: "easeInOut" }}
+                            className="m-2 overflow-hidden"
+                        >
+                            <BookmarkTree
+                                items={item.children}
+                                isRoot={false}
+                                parentId={item.guid}
+                                onUpdate={onUpdate}
+                                darkMode={darkMode}
+                                expandedFolders={expandedFolders}
+                                toggleFolder={toggleFolder}
+                            />
+                        </motion.div>
+                    )}
+            </AnimatePresence>
         </div>
     );
 };
