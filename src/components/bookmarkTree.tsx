@@ -40,13 +40,13 @@ const BookmarkTree: React.FC<BookmarkTreeProps> = ({
     }
 
     return (
-        <div className="mx-2">
+        <div className="mx-2 sm:w-auto">
             {isRoot ? (
-                <div className="flex flex-col md:flex-row md:gap-4">
+                <div className="flex flex-col min-w-[300px] w-full md:w-auto md:flex-row md:gap-4">
                     {columns.map((col, colIndex) => (
                         <div
                             key={colIndex}
-                            className={`flex flex-col gap-2 flex-1 text-xs w-full md:w-1/2 lg:w-1/4 my-1 md:my-0 ${
+                            className={`flex flex-col gap-2 flex-1 text-xs w-auto md:w-1/4 my-1 md:my-0 ${
                                 darkMode.value
                                     ? "text-indigo-200"
                                     : "text-amber-200"
