@@ -17,11 +17,11 @@ export default function BookmarkList({ darkMode }: BookmarkListProps) {
     } = useBookmarks();
 
     if (error) {
-        return <p>Ошибка: {error}</p>;
+        return <p className="text-red-800">Ошибка: {error}</p>;
     }
 
     if (loading) {
-        return <p>Загрузка закладок...</p>;
+        return <p className="text-shadow-emerald-700">Загрузка закладок...</p>;
     }
 
     return (
@@ -37,7 +37,7 @@ export default function BookmarkList({ darkMode }: BookmarkListProps) {
                     toggleFolder={toggleFolder}
                 />
             ) : (
-                <p>Нет закладок для отображения</p>
+                <p className="text-red-800">Нет закладок для отображения</p>
             )}
         </div>
     );

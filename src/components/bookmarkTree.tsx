@@ -30,7 +30,7 @@ const BookmarkTree: React.FC<BookmarkTreeProps> = ({
         onUpdate(newItems, isRoot, parentId);
     };
 
-    if (items.length === 0) return <p>Нет закладок для отображения</p>;
+    if (items.length === 0) return <p className="text-red-800">Нет закладок для отображения</p>;
 
     const columns: BookmarkItem[][] = [[], [], [], []];
     if (isRoot) {
