@@ -1,0 +1,45 @@
+{
+    "manifest_version": 3,
+    "name": "Firemarks Wizard",
+    "version": "1.0.1",
+    "description": "Расширение для сортировки и управления закладками Firefox",
+
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "firemarks-wizard-2025-10-02@example.com",
+            "strict_min_version": "109.0",
+            "data_collection_permissions": {
+                "required": ["none"],
+                "optional": []
+            }
+        }
+    },
+
+    "permissions": ["bookmarks", "storage"],
+
+    "action": {
+        "default_popup": "index.html",
+        "default_title": "Firemarks Wizard"
+    },
+
+    "chrome_url_overrides": {
+        "newtab": "index.html"
+    },
+
+    "icons": {
+        "16": "fmw16.jpg",
+        "48": "fmw48.jpg",
+        "128": "fmw128.jpg"
+    },
+
+    "web_accessible_resources": [
+        {
+            "resources": ["assets/*"],
+            "matches": ["https://*/*", "http://*/*"]
+        }
+    ],
+
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self'"
+    }
+}

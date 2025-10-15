@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: "Pixelify";
+    src: url("/fonts/pixel_font-7.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: "Pixelify", sans-serif;
+}

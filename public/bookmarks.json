@@ -1,0 +1,104 @@
+{
+    "guid": "root________",
+    "title": "",
+    "id": 1,
+    "typeCode": 2,
+    "type": "text/x-moz-place-container",
+    "children": [
+        {
+            "guid": "menu________",
+            "title": "menu",
+            "id": 2,
+            "typeCode": 2,
+            "type": "text/x-moz-place-container",
+            "children": [
+                {
+                    "guid": "menu2________",
+                    "title": "/menu2",
+                    "id": 12,
+                    "typeCode": 2,
+                    "type": "text/x-moz-place-container",
+                    "children": [
+                        {
+                            "guid": "abcd1234efghe",
+                            "title": "Mozillaz",
+                            "id": 5,
+                            "typeCode": 1,
+                            "type": "text/x-moz-place",
+                            "uri": "https://www.mozillaz.org/",
+                            "dateAdded": 17274561234567890,
+                            "lastModified": 17274561234567890
+                        },
+                        {
+                            "guid": "ijkl5678mnopa",
+                            "title": "Googlea",
+                            "id": 6,
+                            "typeCode": 1,
+                            "type": "text/x-moz-placea",
+                            "uri": "https://www.googlea.com/",
+                            "dateAdded": 17274561234567901,
+                            "lastModified": 17274561234567901
+                        }
+                    ],
+                    "dateAdded": 1727456000000,
+                    "lastModified": 1727456200000
+                },
+                {
+                    "guid": "abcd1234efgh",
+                    "title": "Mozilla",
+                    "id": 5,
+                    "typeCode": 1,
+                    "type": "text/x-moz-place",
+                    "uri": "https://www.mozilla.org/",
+                    "dateAdded": 1727456123456789,
+                    "lastModified": 1727456123456789
+                },
+                {
+                    "guid": "ijkl5678mnop",
+                    "title": "Google",
+                    "id": 6,
+                    "typeCode": 1,
+                    "type": "text/x-moz-place",
+                    "uri": "https://www.google.com/",
+                    "dateAdded": 1727456123456790,
+                    "lastModified": 1727456123456790
+                }
+            ],
+            "dateAdded": 1727456000000,
+            "lastModified": 1727456200000
+        },
+        {
+            "guid": "toolbar_____",
+            "title": "toolbar",
+            "id": 3,
+            "typeCode": 2,
+            "type": "text/x-moz-place-container",
+            "children": [
+                {
+                    "guid": "qrst9012uvwx",
+                    "title": "GitHub",
+                    "id": 7,
+                    "typeCode": 1,
+                    "type": "text/x-moz-place",
+                    "uri": "https://www.github.com/",
+                    "dateAdded": 1727456123456791,
+                    "lastModified": 1727456123456791
+                }
+            ],
+            "dateAdded": 172745600000,
+            "lastModified": 1727456000000
+        },
+        {
+            "guid": "unfiled_____",
+            "title": "unfiled",
+            "id": 4,
+            "typeCode": 2,
+            "type": "text/x-moz-place-container",
+            "children": [],
+            "dateAdded": 17274560000000,
+            "lastModified": 1727456000000000
+        }
+    ],
+    "dateAdded": 17274560000000,
+    "lastModified": 1727456000000000
+}
