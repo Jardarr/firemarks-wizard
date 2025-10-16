@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 
-export function useDarkMode(defaultValue = false) {
+export interface DarkModeType {
+    value: boolean;
+    toggle: () => void;
+}
+
+export function useDarkMode(defaultValue = false): DarkModeType {
     const [isDark, setIsDark] = useState(() => {
         const saved = localStorage.getItem("theme");
         if (saved) return saved === "dark";

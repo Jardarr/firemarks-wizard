@@ -1,4 +1,5 @@
 import BookmarkList from "./components/bookmarkList";
+import SearchForm from "./components/searchForm";
 import { useDarkMode } from "./hooks/useDarkmode";
 function App() {
     const darkMode = useDarkMode(false);
@@ -18,6 +19,9 @@ function App() {
                     } border rounded-2xl`}
                 >
                     Firemarks<span className="text-indigo-600">Wizard</span>
+                </div>
+                <div className="hidden md:block">
+                    <SearchForm darkMode={darkMode} />
                 </div>
                 <button onClick={darkMode.toggle} aria-label="Toggle theme">
                     <img

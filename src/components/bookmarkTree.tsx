@@ -1,21 +1,7 @@
 // BookmarkTree.tsx
-import type { BookmarkItem } from "../types/bookmarkTypes";
+import type { BookmarkItem, BookmarkTreeProps } from "../types/bookmarkTypes";
 import { ReactSortable } from "react-sortablejs";
 import BookmarkItemComponent from "./bookmarkItemComponent";
-
-interface BookmarkTreeProps {
-    items: BookmarkItem[];
-    isRoot?: boolean;
-    parentId?: string | null;
-    onUpdate: (
-        newItems: BookmarkItem[],
-        isRoot: boolean,
-        parentId: string | null
-    ) => void;
-    darkMode: { value: boolean; toggle: () => void };
-    expandedFolders: Record<string, boolean>;
-    toggleFolder: (guid: string) => void;
-}
 
 const BookmarkTree: React.FC<BookmarkTreeProps> = ({
     items,
