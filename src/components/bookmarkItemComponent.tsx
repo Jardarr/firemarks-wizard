@@ -15,11 +15,6 @@ interface BookmarkItemComponentProps {
     darkMode: { value: boolean; toggle: () => void };
 }
 
-const MAX_TITLE_LENGTH = 40;
-
-const truncateTitle = (title: string, maxLength: number = MAX_TITLE_LENGTH) =>
-    title.length <= maxLength ? title : title.substring(0, maxLength) + "...";
-
 const BookmarkItemComponent: React.FC<BookmarkItemComponentProps> = ({
     item,
     expandedFolders,
@@ -33,14 +28,14 @@ const BookmarkItemComponent: React.FC<BookmarkItemComponentProps> = ({
                 href={item.uri}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center"
+                className="flex items-center whitespace-nowrap overflow-hidden"
             >
                 <img
                     src={`https://www.google.com/s2/favicons?domain=${item.uri}`}
                     alt="Favicon"
                     className="w-4 h-4 mr-1"
                 />
-                {truncateTitle(item.title || item.uri || "")}
+                {item.title || item.uri || ""}
             </a>
         );
     }
@@ -70,7 +65,7 @@ const BookmarkItemComponent: React.FC<BookmarkItemComponentProps> = ({
                     >
                         <path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4" />
                     </svg>
-                    <span>{truncateTitle(item.title)}</span>
+                    <span>{item.title}</span>
                 </div>
                 <span className={expandedFolders[item.guid] ? "rotate-90" : ""}>
                     <svg

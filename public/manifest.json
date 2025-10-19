@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Firemarks Wizard",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Расширение для сортировки и управления закладками Firefox",
 
     "browser_specific_settings": {
