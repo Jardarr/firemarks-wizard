@@ -28,7 +28,7 @@ const BookmarkItemComponent: React.FC<BookmarkItemComponentProps> = ({
                 href={item.uri}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center whitespace-nowrap overflow-hidden"
+                className="flex items-center whitespace-nowrap overflow-hidden hover:underline"
             >
                 <img
                     src={`https://www.google.com/s2/favicons?domain=${item.uri}`}
