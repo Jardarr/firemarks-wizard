@@ -41,21 +41,18 @@
 
 ---
 
-## 🧙‍♂️ Структура проекта
+## 🧙‍♂️ Структура ваших закладок
+  Для получения корректной структуры закладок, я рекомендую добавить папки с закладками в корневую папку "Bookmarks Menu" (меню закладок).
 
 ```
-firemarks-wizard/
-├── public/              # Статические файлы, manifest.json, bookmarks.json
-├── src/
-│   ├── components/      # React-компоненты интерфейса (магические элементы)
-│   ├── hooks/           # Пользовательские хуки (магические заклинания)
-│   ├── types/           # Типы TypeScript для firemarks и WebExtension API
-│   ├── App.tsx          # Корневой компонент — волшебная сцена
-│   └── main.tsx         # Точка входа — начало магии
-├── plugins/             # Vite-плагины
-├── vite.config.ts       # Конфигурация Vite
-├── tailwind.config.js   # Конфигурация TailwindCSS
-└── ...                  # Прочие конфиги и документация
+bookmarks menu/          # Корневая папка
+├── folder1/             # Папки с отсортированными по категориям закладками
+├── folder2/
+│   ├── bookmark1        # Закладки
+│   ├── bookmark2
+│   └── bookmark3
+├── folder3/
+└── ...                  # Прочие папки
 ```
 
 ---
@@ -67,7 +64,7 @@ firemarks-wizard/
 - **TailwindCSS** (стилизация)
 - **WebExtension API** (интеграция с Firefox)
 - **react-sortablejs** (магия drag'n'drop)
-
+- **framer-motion** (анимация раскрытия блоков-папок)
 ---
 
 ## 📄 Лицензия
