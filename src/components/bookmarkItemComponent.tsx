@@ -6,7 +6,7 @@ interface BookmarkItemComponentProps {
 	item: BookmarkItem;
 	expandedFolders: Record<string, boolean>;
 	toggleFolder: (guid: string) => void;
-	onUpdate: (newItems: BookmarkItem[], isRoot: boolean, parentId: string | null) => void;
+	onUpdate: (oldItems: BookmarkItem[], newItems: BookmarkItem[], isRoot: boolean, parentId: string | null) => void;
 	isRoot: boolean;
 	darkMode: { value: boolean; toggle: () => void };
 }
@@ -14,9 +14,9 @@ interface BookmarkItemComponentProps {
 const BookmarkItemComponent: React.FC<BookmarkItemComponentProps> = ({ item, expandedFolders, toggleFolder, onUpdate, darkMode }) => {
 	if (item.typeCode === 1) {
 		return (
-			<a href={item.uri} target="_blank" rel="noopener noreferrer" className="flex items-center min-w-0 hover:underline">
-				<img src={`https://www.google.com/s2/favicons?domain=${item.uri}`} alt="Favicon" className="w-4 h-4 mr-1" />
-				<span className="truncate">{item.title || item.uri || ""}</span>
+			<a href={item.url} target="_blank" rel="noopener noreferrer" className="flex items-center min-w-0 hover:underline">
+				<img src={`https://www.google.com/s2/favicons?domain=${item.url}`} alt="Favicon" className="w-4 h-4 mr-1" />
+				<span className="truncate">{item.title || item.url || ""}</span>
 			</a>
 		);
 	}

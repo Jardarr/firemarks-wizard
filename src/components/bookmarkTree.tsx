@@ -4,12 +4,7 @@ import { ReactSortable } from "react-sortablejs";
 import BookmarkItemComponent from "./bookmarkItemComponent";
 
 const BookmarkTree: React.FC<BookmarkTreeProps> = ({ items, isRoot = true, parentId = null, onUpdate, darkMode, expandedFolders, toggleFolder }) => {
-	const handleSort = (newItems: BookmarkItem[]) => {
-		onUpdate(newItems, isRoot, parentId);
-	};
-
 	if (items.length === 0) return <p className="text-red-800">Нет закладок для отображения</p>;
-
 	const columns: BookmarkItem[][] = [[], [], [], []];
 	if (isRoot) {
 		items.forEach((item, index) => {
@@ -38,7 +33,26 @@ const BookmarkTree: React.FC<BookmarkTreeProps> = ({ items, isRoot = true, paren
 					))}
 				</div>
 			) : (
-				<ReactSortable tag="div" list={items} setList={handleSort} className="flex flex-col justify-center gap-2">
+				<ReactSortable
+					tag="div"
+					list={items}
+					setList={(newItems) => {
+						onUpdate(items, newItems, isRoot, parentId);
+					}}
+					onEnd={(evt) => {
+						if (evt.oldIndex === undefined || evt.newIndex === undefined) {
+							return;
+						}
+						const movedItem = items[evt.oldIndex];
+						if (!movedItem) {
+							return;
+						}
+						void browser.bookmarks.move(movedItem.guid, {
+							parentId: parentId || "menu________",
+							index: evt.newIndex,
+						});
+					}}
+					className="flex flex-col justify-center gap-2">
 					{items.map((item) => (
 						<BookmarkItemComponent key={item.guid} item={item} expandedFolders={expandedFolders} toggleFolder={toggleFolder} onUpdate={onUpdate} isRoot={false} darkMode={darkMode} />
 					))}
